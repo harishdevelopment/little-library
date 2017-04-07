@@ -1,7 +1,7 @@
 package com.littlelibrary.operations;
 
-import com.littlelibrary.repository.LibraryRepository;
 import com.littlelibrary.exception.BookNotAvailableException;
+import com.littlelibrary.repository.LibraryRepository;
 import com.littlelibrary.types.BookStatus;
 
 public class BorrowBook implements Operations {
@@ -14,7 +14,7 @@ public class BorrowBook implements Operations {
 
     @Override
     public void performOperation(LibraryRepository libraryRepository) {
-        if(libraryRepository.getBookStatus(bookTitle) == BookStatus.AVAILABLE) {
+        if (libraryRepository.getBookStatus(bookTitle) == BookStatus.AVAILABLE) {
             libraryRepository.updateBookStatus(bookTitle, BookStatus.ISSUED);
             System.out.println(bookTitle + " has been issued");
         } else {

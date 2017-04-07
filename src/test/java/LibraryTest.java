@@ -66,7 +66,7 @@ public class LibraryTest {
         operation = new BorrowBook("Book 2");
         operation.performOperation(libraryBooks);
         Map libraryBooks = this.libraryBooks.getLibraryStatus();
-        libraryBooks.forEach((k,v)->System.out.println("Book Title : " + k + " BookStatus : " + v));
+        libraryBooks.forEach((k, v) -> System.out.println("Book Title : " + k + " BookStatus : " + v));
     }
 
 

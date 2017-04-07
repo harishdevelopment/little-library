@@ -20,8 +20,8 @@ public class LibraryRepositoryImpl implements LibraryRepository {
     }
 
     @Override
-    public void updateBookStatus(String bookTitle, BookStatus bookStatus){
-        if(libraryBooks.containsKey(bookTitle)){
+    public void updateBookStatus(String bookTitle, BookStatus bookStatus) {
+        if (libraryBooks.containsKey(bookTitle)) {
             libraryBooks.put(bookTitle, bookStatus);
         } else {
             throw new BookNotAvailableException();
@@ -29,8 +29,8 @@ public class LibraryRepositoryImpl implements LibraryRepository {
     }
 
     @Override
-    public BookStatus getBookStatus(String bookTitle){
-        if(libraryBooks.containsKey(bookTitle)){
+    public BookStatus getBookStatus(String bookTitle) {
+        if (libraryBooks.containsKey(bookTitle)) {
             return libraryBooks.get(bookTitle);
         } else {
             throw new BookNotAvailableException();
@@ -38,7 +38,7 @@ public class LibraryRepositoryImpl implements LibraryRepository {
     }
 
     @Override
-    public Map getLibraryStatus(){
+    public Map getLibraryStatus() {
         return libraryBooks;
     }
 }

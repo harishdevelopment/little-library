@@ -1,7 +1,7 @@
 package com.littlelibrary.operations;
 
-import com.littlelibrary.repository.LibraryRepository;
 import com.littlelibrary.exception.BookNotAvailableException;
+import com.littlelibrary.repository.LibraryRepository;
 import com.littlelibrary.types.BookStatus;
 
 public class HoldBook implements Operations {
@@ -14,7 +14,7 @@ public class HoldBook implements Operations {
 
     @Override
     public void performOperation(LibraryRepository libraryRepository) {
-        if(libraryRepository.getBookStatus(bookTitle) == BookStatus.AVAILABLE) {
+        if (libraryRepository.getBookStatus(bookTitle) == BookStatus.AVAILABLE) {
             libraryRepository.updateBookStatus(bookTitle, BookStatus.HOLD);
             System.out.println(bookTitle + " has been put on hold");
         } else {
