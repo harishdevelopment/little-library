@@ -16,15 +16,8 @@ public class ReturnBook implements Operations {
         libraryRepositoryImpl.updateBookStatus(bookTitle, BookStatus.AVAILABLE);
         System.out.println(bookTitle + " has been returned");
 
-        // Store the fine in the repository against the user
-        calculateAndStoreFine(libraryRepositoryImpl);
+        // Changes to ReturnBook class can be avoided by using Spring framework Aspects
+        FineCalculation.calculateAndStoreFine(libraryRepositoryImpl);
     }
 
-    /*
-      This method is dummy as we are not tracking the book issue dates
-      Detail implementation will require detailed repository model
-     */
-    private void calculateAndStoreFine(LibraryRepository libraryRepositoryImpl) {
-        System.out.println("Fine calculated when books are returned");
-    }
 }
